@@ -1,47 +1,118 @@
-export const plants = [
-    { name: "Thyme", category: "Herbs & Kitchen Staples", daysToMaturity: 90 },
-    { name: "Bull's Blood", category: "Herbs & Kitchen Staples", daysToMaturity: 35 },
-    { name: "Green Tatsoi", category: "Herbs & Kitchen Staples", daysToMaturity: 21 },
-    { name: "Green Salanova", category: "Herbs & Kitchen Staples", daysToMaturity: 55 },
-    { name: "Basil", category: "Herbs & Kitchen Staples", daysToMaturity: 68 },
-    { name: "Collard Greens", category: "Herbs & Kitchen Staples", daysToMaturity: 60 },
-    { name: "Celery", category: "Herbs & Kitchen Staples", daysToMaturity: 75 },
-    { name: "Lemon Basil", category: "Herbs & Kitchen Staples", daysToMaturity: 70 },
-    { name: "Yellow Swiss Chard", category: "Herbs & Kitchen Staples", daysToMaturity: 60 },
-    { name: "Green Bok Choy", category: "Herbs & Kitchen Staples", daysToMaturity: 20 },
-    { name: "Sunflower", category: "Herbs & Kitchen Staples", daysToMaturity: 65 },
-    { name: "Perpetual Spinach", category: "Herbs & Kitchen Staples", daysToMaturity: 40 },
-    { name: "Kale Lacinato", category: "Herbs & Kitchen Staples", daysToMaturity: 65 },
-    { name: "Purple Kohlrabi", category: "Herbs & Kitchen Staples", daysToMaturity: 45 },
-    { name: "Breen", category: "Beautiful Blooms", daysToMaturity: 45 },
-    { name: "Bull's Blood", category: "Beautiful Blooms", daysToMaturity: 35 },
-    { name: "Butterhead", category: "Beautiful Blooms", daysToMaturity: 55 },
-    { name: "Pink Celery", category: "Beautiful Blooms", daysToMaturity: 75 },
-    { name: "Red Sorrel", category: "Beautiful Blooms", daysToMaturity: 60 },
-    { name: "Salanova", category: "Beautiful Blooms", daysToMaturity: 50 },
-    { name: "Yellow Chard", category: "Beautiful Blooms", daysToMaturity: 60 },
-    { name: "Bunching Onions", category: "Beautiful Blooms", daysToMaturity: 50 },
-    { name: "Lemon Balm", category: "Beautiful Blooms", daysToMaturity: 70 },
-    { name: "Purple Basil", category: "Beautiful Blooms", daysToMaturity: 65 },
-    { name: "Celosia", category: "Beautiful Blooms", daysToMaturity: 90 },
-    { name: "Snapdragon", category: "Beautiful Blooms", daysToMaturity: 100 },
-    { name: "Stock Flower", category: "Beautiful Blooms", daysToMaturity: 75 },
-    { name: "Sunflower", category: "Beautiful Blooms", daysToMaturity: 65 },
-    { name: "White Petunia", category: "Beautiful Blooms", daysToMaturity: 80 },
-    { name: "Breen", category: "Salad Essentials", daysToMaturity: 45 },
-    { name: "Bronze Arrow Lettuce", category: "Salad Essentials", daysToMaturity: 55 },
-    { name: "Bull's Blood", category: "Salad Essentials", daysToMaturity: 35 },
-    { name: "Butterhead", category: "Salad Essentials", daysToMaturity: 55 },
-    { name: "Green Tatsoi", category: "Salad Essentials", daysToMaturity: 21 },
-    { name: "Kale", category: "Salad Essentials", daysToMaturity: 65 },
-    { name: "Kohlrabi", category: "Salad Essentials", daysToMaturity: 45 },
-    { name: "Perpetual Spinach", category: "Salad Essentials", daysToMaturity: 40 },
-    { name: "Red Mustard", category: "Salad Essentials", daysToMaturity: 35 },
-    { name: "Romaine", category: "Salad Essentials", daysToMaturity: 60 },
-    { name: "Salanova", category: "Salad Essentials", daysToMaturity: 50 },
-    { name: "Watercress", category: "Salad Essentials", daysToMaturity: 30 },
-    { name: "Basil", category: "Salad Essentials", daysToMaturity: 30 },
-    { name: "Bunching Onions", category: "Salad Essentials", daysToMaturity: 50 },
-    { name: "Cilantro", category: "Salad Essentials", daysToMaturity: 28 },
-    { name: "Sunflower", category: "Salad Essentials", daysToMaturity: 65 },
+const createPlant = (name,daysToMaturity, categories) => ({ name, daysToMaturity, categories });
+const createCategory = (name) => ({ name });
+
+    export const plants = [
+        createPlant("Basil", 68, [
+            createCategory("Herbs & Kitchen Staples"), 
+            createCategory("Salad Essentials")
+         ]),
+        createPlant("Breen", 45, [
+            createCategory("Beautiful Blooms"),
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Bronze Arrow Lettuce", 55, [
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Bull's Blood", 35, [
+            createCategory("Beautiful Blooms"),
+            createCategory("Herbs & Kitchen Staples"),
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Bunching Onions"), 50, [
+            createCategory("Beautiful Blooms"),
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Butterhead", 55, [
+            createCategory("Beautiful Blooms"),
+            createCategory("Salad Essentials"),
+            createCategory("Herbs & Kitchen Staples")
+        ]),
+        createPlant("Celosia", 90, [
+            createCategory("Beautiful Blooms")
+        ]),
+        createPlant("Cilantro", 28, [
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Collard Greens", 60, [
+            createCategory("Herbs & Kitchen Staples")
+        ]),
+        createPlant("Green Bok Choy", 20, [
+            createCategory("Herbs & Kitchen Staples")]),
+        createPlant("Green Salanova", 55, [
+            createCategory("Herbs & Kitchen Staples")]),
+        createPlant("Green Tatsoi", 21, [
+            createCategory("Herbs & Kitchen Staples"),
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Kale Lacinato", 65, [
+            createCategory("Herbs & Kitchen Staples")
+        ]),
+        createPlant("Kale", 65, [
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Kohlrabi", 45, [
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Lemon Balm", 70, [
+            createCategory("Beautiful Blooms")
+        ]),
+        createPlant("Lemon Basil", 70, [
+            createCategory("Herbs & Kitchen Staples")
+        ]),
+        createPlant("Perpetual Spinach", 40, [
+            createCategory("Herbs & Kitchen Staples"),
+            createCategory("Salad Essentials", 40)
+        ]),
+        createPlant("Pink Celery", 75, [
+            createCategory("Beautiful Blooms")
+        ]),
+        createPlant("Purple Basil", 65, [
+            createCategory("Beautiful Blooms")
+        ]),
+        createPlant("Purple Kohlrabi", 45, [
+            createCategory("Herbs & Kitchen Staples")
+        ]),
+        createPlant("Red Mustard", 35, [
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Red Sorrel", 60, [
+            createCategory("Beautiful Blooms")
+        ]),
+        createPlant("Romaine", 60, [
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Salanova", 50, [
+            createCategory("Beautiful Blooms"),
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Snapdragon", 100, [
+            createCategory("Beautiful Blooms")
+        ]),
+        createPlant("Stock Flower", 75, [
+            createCategory("Beautiful Blooms")
+        ]),
+        createPlant("Sunflower", 65, [
+            createCategory("Beautiful Blooms"),
+            createCategory("Herbs & Kitchen Staples"),
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("Thyme", 90, [
+            createCategory("Herbs & Kitchen Staples")
+
+        ]),
+        createPlant("Watercress", 30, [
+            createCategory("Salad Essentials")
+        ]),
+        createPlant("White Petunia", 80, [
+            createCategory("Beautiful Blooms")
+        ]),
+        createPlant("Yellow Chard", 60, [
+            createCategory("Beautiful Blooms")
+        ]),
+        createPlant("Yellow Swiss Chard", 60, [
+            createCategory("Herbs & Kitchen Staples")
+        ]),
 ];
+
+export const categories = [...new Set(plants.flatMap(plant => plant.categories.map(category => category.name)))];
+export const plantsList = plants;

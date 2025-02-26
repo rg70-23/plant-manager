@@ -72,10 +72,8 @@
             <label for="plantDate" style="color:green;font-size: large;"><b>Plant Date</b></label>
             <input type="date" id="plantDate"><br>
             <label for="category" style="color:green;font-size: large;"><b>Plant Category</b></label>
-            <select id="category">
-                <option value="Herbs & Kitchen Staples">Herbs & Kitchen Staples</option>
-                <option value="Salad Essentials">Salad Essentials</option>
-                <option value="Beautiful Blooms">Beautiful Blooms</option>
+            <select id="category" name="category">
+                <option value="">--Select a Category--</option>
             </select><br><br>
             <button id="showMaturityBtn" style="background-color: green; color:white; padding: 8px; border:none; border-radius:10px">Show Maturity</button>
         </div>
@@ -83,6 +81,14 @@
     </div>
     <script type="module">
         import { plants } from './plants.js';
+        const categoryDropdown = document.getElementById('category');
+        const categories = new Set();
+
+        plants.forEach(plant => {
+            plant.categories.forEach(category => {
+                categories.add(category.name);
+            });
+        });
 
         function calculateGardenAge() {
             const plantDateInput = document.getElementById("plantDate").value;
@@ -116,7 +122,7 @@
 
             const plantDate = new Date(plantDateInput);
             const today = new Date();
-            const filteredPlants = plants.filter(plant => plant.category === category);
+            const filteredPlants = plants.filter(plant => plant.categories.some(cat => cat.name === category));
 
             console.log("Filtered Plants:", filteredPlants);
 
