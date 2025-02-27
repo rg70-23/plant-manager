@@ -1,65 +1,75 @@
+
+
+Skip to content
+Using Gmail with screen readers
+Conversations
+5.24 GB of 15 GB used
+Terms · Privacy · Program Policies
+Last account activity: 0 minutes ago
+Open in 1 other location · Details
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-KFZ3FCRL');</script>
-    <!-- End Google Tag Manager -->
-    <meta property="og:title" content="Plant Manager: Keep Your Harvests on Track">
-    <meta property="og:description" content="Struggling to remember when to harvest your hydroponic plants? Meet Plant Manager, a simple tool designed to help you track harvest times and keep your garden thriving.">
-    <meta property="og:image" content="https://github.com/brooookemiller/plant-manager/raw/main/garden_landscape.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="627">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/brooookemiller/plant-manager/main/garden_landscape.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garden Tracker</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .message {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .green-text {
-            color: green;
-        }
-        .ready-to-harvest {
-            color: green;
-            font-weight: bold;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-    </style>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MH83WKYZ77"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <head>
+        <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KFZ3FCRL');</script>
+        <!-- End Google Tag Manager -->
+        <meta property="og:title" content="Plant Manager: Keep Your Harvests on Track">
+        <meta property="og:description" content="Struggling to remember when to harvest your hydroponic plants? Meet Plant Manager, a simple tool designed to help you track harvest times and keep your garden thriving.">
+        <meta property="og:image" content="https://github.com/brooookemiller/plant-manager/raw/main/garden_landscape.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="627">
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/brooookemiller/plant-manager/main/garden_landscape.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Garden Tracker</title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-  gtag('config', 'G-MH83WKYZ77');
-</script>
+          gtag('config', 'G-MH83WKYZ77');
+        </script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            h1 {
+                text-align: center;
+            }
+            .message {
+                text-align: center;
+                font-size: 24px;
+                font-weight: bold;
+            }
+            .green-text {
+                color: green;
+            }
+            .ready-to-harvest {
+                color: green;
+                font-weight: bold;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFZ3FCRL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -74,13 +84,14 @@
             <label for="category" style="color:green;font-size: large;"><b>Plant Category</b></label>
             <select id="category" name="category">
                 <option value="">--Select a Category--</option>
-            </select><br><br>
+            </select><br>
             <button id="showMaturityBtn" style="background-color: green; color:white; padding: 8px; border:none; border-radius:10px">Show Maturity</button>
         </div>
             <div id="results"></div>
     </div>
+
     <script type="module">
-        import { plants } from './plants.js';
+        import { plants } from './plants.js'; // Ensure this path is correct and the file exists
         const categoryDropdown = document.getElementById('category');
         const categories = new Set();
 
@@ -90,6 +101,14 @@
             });
         });
 
+        console.log(plants); // Display the contents of the plants array after the import
+
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category;
+            categoryDropdown.appendChild(option);
+        });
         function calculateGardenAge() {
             const plantDateInput = document.getElementById("plantDate").value;
             if (!plantDateInput) return;
@@ -103,7 +122,7 @@
             document.getElementById("garden-age").textContent = diffDays;
         }
 
-        function calculateMaturity() {
+function calculateMaturity() {
             console.log("calculateMaturity called");
 
             const plantDateInput = document.getElementById("plantDate").value;
@@ -177,47 +196,48 @@
             });
         });
     </script>
-    <p style="text-align: center; margin-top: 20px; font-size: 1rem;">
-        <strong>New Request?</strong><br />
-        <a href="https://github.com/brooookemiller/plant-manager/blob/main/README.md" 
-           style="color: #007acc; text-decoration: none;" 
-           onclick="gtag('event', 'link_click', { 
-               'event_category': 'outbound_link', 
-               'event_label': 'Contribute', 
-               'value': 1 
-           });">
-            Contributions are welcome.
-        </a>
-    </p>
+        <p style="text-align: center; margin-top: 20px; font-size: 1rem;">
+            <strong>New Request?</strong><br />
+            <a href="https://github.com/brooookemiller/plant-manager/blob/main/README.md" 
+               style="color: #007acc; text-decoration: none;" 
+               onclick="gtag('event', 'link_click', { 
+                   'event_category': 'outbound_link', 
+                   'event_label': 'Contribute', 
+                   'value': 1 
+               });">
+                Contributions are welcome.
+            </a>
+        </p>
+        
+        <p style="text-align: center; font-size: 0.9rem; color: #555; margin-top: 15px;">
+            Created by 
+            <a href="https://www.linkedin.com/in/millerbrooke" 
+               target="_blank" 
+               style="color: #007acc; text-decoration: none;" 
+               onclick="gtag('event', 'link_click', { 
+                   'event_category': 'outbound_link', 
+                   'event_label': 'LinkedIn Profile', 
+                   'value': 1 
+               });">
+                Brooke Miller</a>.<br />
+            <a href="https://venmo.com/u/Brooke-Miller-5" 
+               target="_blank" 
+               style="color: #007acc; text-decoration: none;" 
+               onclick="gtag('event', 'link_click', { 
+                   'event_category': 'outbound_link', 
+                   'event_label': 'Venmo Page', 
+                   'value': 1 
+               });">
+                Buy me a coffee</a> 
+            <img src="https://emojiisland.com/cdn/shop/products/Hot_Coffee_Emoji_large.png?v=1571606066" 
+             alt="" width="15" style="vertical-align: middle; margin-left: 5px;" aria-hidden="true" />
+        </p>
+        
+        <p style="text-align: center; font-size: 0.8rem; color: #777; margin-top: 20px; line-height: 1.5;">
+            <em>Disclaimer: The maturity data provided on this website is for informational purposes only. 
+            While efforts have been made to ensure accuracy, the data is derived from publicly available horticultural 
+            information. This tool is independent and not affiliated with any specific brands or services.</em>
+        </p>    
     
-    <p style="text-align: center; font-size: 0.9rem; color: #555; margin-top: 15px;">
-        Created by 
-        <a href="https://www.linkedin.com/in/millerbrooke" 
-           target="_blank" 
-           style="color: #007acc; text-decoration: none;" 
-           onclick="gtag('event', 'link_click', { 
-               'event_category': 'outbound_link', 
-               'event_label': 'LinkedIn Profile', 
-               'value': 1 
-           });">
-            Brooke Miller</a>.<br />
-        <a href="https://venmo.com/u/Brooke-Miller-5" 
-           target="_blank" 
-           style="color: #007acc; text-decoration: none;" 
-           onclick="gtag('event', 'link_click', { 
-               'event_category': 'outbound_link', 
-               'event_label': 'Venmo Page', 
-               'value': 1 
-           });">
-            Buy me a coffee</a> 
-        <img src="https://emojiisland.com/cdn/shop/products/Hot_Coffee_Emoji_large.png?v=1571606066" 
-         alt="" width="15" style="vertical-align: middle; margin-left: 5px;" aria-hidden="true" />
-    </p>
-    
-    <p style="text-align: center; font-size: 0.8rem; color: #777; margin-top: 20px; line-height: 1.5;">
-        <em>Disclaimer: The maturity data provided on this website is for informational purposes only. 
-        While efforts have been made to ensure accuracy, the data is derived from publicly available horticultural 
-        information. This tool is independent and not affiliated with any specific brands or services.</em>
-    </p>    
 </body>
 </html>

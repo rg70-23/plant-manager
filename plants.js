@@ -27,7 +27,7 @@ const createCategory = (name) => ({ name });
             createCategory("Budding Florist"),
             createCategory("Chef Faves")
         ]),
-        createPlant("Bunching Onions"), 50, [
+        createPlant("Bunching Onions", 50, [
             createCategory("Beautiful Blooms"),
             createCategory("Salad Essentials"),
             createCategory("Salad Lover"),
